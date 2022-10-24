@@ -24,7 +24,6 @@ public class AddCandidateTestJava extends BaseTestJava{
         login.setPasswordField("admin123");
 
     }
-
     @Test(dependsOnMethods = "testSuccessfulLogin")
     public void testSuccessfulAddCandidate (){
         WelcomePage welcomePage = login.clickLoginButton();
@@ -35,11 +34,13 @@ public class AddCandidateTestJava extends BaseTestJava{
         addNewCandidatePage.setFirstNameField("admin");
         addNewCandidatePage.setLastNameField("admin");
         addNewCandidatePage.setEmailField("admin@google.com");
-        addNewCandidatePage.uploadResumeFile("D:\\Toka Mostafa CV.pdf");
+        addNewCandidatePage.selectVacancy(2);
+        addNewCandidatePage.setContactNumberField("0000111111");
+        addNewCandidatePage.uploadResumeFile("D:\\Testing\\Add Candidate OrangeHRM\\src\\resources\\resume.txt");
+        addNewCandidatePage.enterDateOfApplication("2022-10-24");
         addNewCandidatePage.checkConsentCheckbox();
         addNewCandidatePage.saveNewCandidate();
-        addNewCandidatePage.selectVacancy(2);
-        addNewCandidatePage.enterDateOfApplication("2022-10-24");
+
 
     }
 
